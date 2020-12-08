@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>检验批文字处理</title>
+</head>
+<style type="text/css">
+    #in {
+        width: 500px;
+        height: 500px;
+    }
+
+    #out {
+        width: 500px;
+        height: 500px;
+    }
+
+    .root {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 20px;
+    }
+</style>
+<body>
+	<h1>此工具只适用于碧桂园凤栖台</h1>
+	<h2>by:拽哥哥</h2><br>
+<div class="root">
+	
+    <textarea class="shuru" id="in" placeholder="请输入记录表中的桩号:"></textarea>
+    <button type="button" id="change" style="margin:0px 10px;width:200px;height:100px;">转换</button>
+    <textarea class="shuchu" id="out"  placeholder="处理过后的文字:"></textarea>
+	
+</div>
+
+<script type="text/jscript">
+			var input = document.getElementById("in");
+			var output = document.getElementById("out");
+			var btn = document.getElementById("change");
+			var password = document.getElementById("pwd");
+			btn.onclick = function(){
+				
+					var ys = input.value;
+					var reg = new RegExp( '、、' , "g" );
+					var jyp = ys.replace(/[\t]/g, "、").replace(/[\t]/g, "").replace(/[\n]/g,"、").replace(reg,"、").replace(reg,"、").replace(reg,"、").replace(reg,"、");
+					
+					output.value = jyp;			
+			}
+		
+</script>
+</body>
+
+</html>
